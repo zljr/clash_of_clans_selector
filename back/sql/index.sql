@@ -1,0 +1,77 @@
+CREATE DATABASE `clash_of_clans` CHARACTER SET 'utf8mb4' COLLATE 'utf8mb4_general_ci';
+CREATE TABLE `troops` (
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `path` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `container` int(255) NOT NULL,
+  `category` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  PRIMARY KEY (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+INSERT INTO `troops` VALUES ('亡灵', '普通兵-亡灵.png', 2, 'troops');
+INSERT INTO `troops` VALUES ('伤害药水法术', '法术-伤害药水法术.png', 1, 'magics');
+INSERT INTO `troops` VALUES ('冰冻法术', '法术-冰冻法术.png', 1, 'magics');
+INSERT INTO `troops` VALUES ('哥布林', '普通兵-哥布林.png', 1, 'troops');
+INSERT INTO `troops` VALUES ('回溯法术', '法术-回溯法术.png', 2, 'magics');
+INSERT INTO `troops` VALUES ('地域飞龙', '超级兵-地域飞龙.png', 15, 'super_troops');
+INSERT INTO `troops` VALUES ('地震法术', '法术-地震法术.png', 1, 'magics');
+INSERT INTO `troops` VALUES ('复苏法术', '法术-复苏法术.png', 2, 'magics');
+INSERT INTO `troops` VALUES ('大雪怪', '普通兵-大雪怪.png', 18, 'troops');
+INSERT INTO `troops` VALUES ('天使', '普通兵-天使.png', 14, 'troops');
+INSERT INTO `troops` VALUES ('女巫', '普通兵-女巫.png', 12, 'troops');
+INSERT INTO `troops` VALUES ('守护者学徒', '普通兵-守护者学徒.png', 20, 'troops');
+INSERT INTO `troops` VALUES ('寒冰猎犬', '超级兵-寒冰猎犬.png', 40, 'super_troops');
+INSERT INTO `troops` VALUES ('巨人', '普通兵-巨人.png', 5, 'troops');
+INSERT INTO `troops` VALUES ('巨矛投手', '普通兵-巨矛投手.png', 16, 'troops');
+INSERT INTO `troops` VALUES ('巨石投手', '普通兵-巨石投手.png', 6, 'troops');
+INSERT INTO `troops` VALUES ('弓箭手', '普通兵-弓箭手.png', 1, 'troops');
+INSERT INTO `troops` VALUES ('弹跳法术', '法术-弹跳法术.png', 2, 'magics');
+INSERT INTO `troops` VALUES ('德鲁伊', '普通兵-德鲁伊.png', 16, 'troops');
+INSERT INTO `troops` VALUES ('急速法术', '法术-急速法术.png', 1, 'magics');
+INSERT INTO `troops` VALUES ('戈仑冰人', '普通兵-戈仑冰人.png', 15, 'troops');
+INSERT INTO `troops` VALUES ('戈仑石人', '普通兵-戈仑石人.png', 30, 'troops');
+INSERT INTO `troops` VALUES ('掘地矿工', '普通兵-掘地矿工.png', 6, 'troops');
+INSERT INTO `troops` VALUES ('攻城战车', '攻城机器-攻城战车.png', 1, 'machines');
+INSERT INTO `troops` VALUES ('攻城气球', '攻城机器-攻城气球.png', 1, 'machines');
+INSERT INTO `troops` VALUES ('攻城滚木车', '攻城机器-攻城滚木车.png', 1, 'machines');
+INSERT INTO `troops` VALUES ('攻城烈焰车', '攻城机器-攻城烈焰车.png', 1, 'machines');
+INSERT INTO `troops` VALUES ('攻城训练营', '攻城机器-攻城训练营.png', 1, 'machines');
+INSERT INTO `troops` VALUES ('攻城钻机', '攻城机器-攻城钻机.png', 1, 'machines');
+INSERT INTO `troops` VALUES ('攻城飞艇', '攻城机器-攻城飞艇.png', 1, 'machines');
+INSERT INTO `troops` VALUES ('根蔓法术', '法术-根蔓法术.png', 2, 'magics');
+INSERT INTO `troops` VALUES ('根蔓骑士', '普通兵-根蔓骑士.png', 20, 'troops');
+INSERT INTO `troops` VALUES ('气球兵', '普通兵-气球兵.png', 5, 'troops');
+INSERT INTO `troops` VALUES ('法师', '普通兵-法师.png', 4, 'troops');
+INSERT INTO `troops` VALUES ('火箭气球兵', '超级兵-火箭气球兵.png', 8, 'super_troops');
+INSERT INTO `troops` VALUES ('炸弹人', '普通兵-炸弹人.png', 2, 'troops');
+INSERT INTO `troops` VALUES ('烈焰熔炉', '普通兵-烈焰熔炉.png', 18, 'troops');
+INSERT INTO `troops` VALUES ('熔岩猎犬', '普通兵-熔岩猎犬.png', 30, 'troops');
+INSERT INTO `troops` VALUES ('狂暴法术', '法术-狂暴法术.png', 2, 'magics');
+INSERT INTO `troops` VALUES ('瓦丽基武神', '普通兵-瓦丽基武神.png', 8, 'troops');
+INSERT INTO `troops` VALUES ('疗伤法术', '法术-疗伤法术.png', 2, 'magics');
+INSERT INTO `troops` VALUES ('皮卡超人', '普通兵-皮卡超人.png', 25, 'troops');
+INSERT INTO `troops` VALUES ('英雄猎手', '普通兵-英雄猎手.png', 6, 'troops');
+INSERT INTO `troops` VALUES ('蝙蝠法术', '法术-蝙蝠法术.png', 1, 'magics');
+INSERT INTO `troops` VALUES ('超级亡灵', '超级兵-超级亡灵.png', 12, 'super_troops');
+INSERT INTO `troops` VALUES ('超级女巫', '超级兵-超级女巫.png', 40, 'super_troops');
+INSERT INTO `troops` VALUES ('超级巨人', '超级兵-超级巨人.png', 10, 'super_troops');
+INSERT INTO `troops` VALUES ('超级巨石投手', '超级兵-超级巨石投手.png', 30, 'super_troops');
+INSERT INTO `troops` VALUES ('超级弓箭手', '超级兵-超级弓箭手.png', 12, 'super_troops');
+INSERT INTO `troops` VALUES ('超级法师', '超级兵-超级法师.png', 10, 'super_troops');
+INSERT INTO `troops` VALUES ('超级炸弹人', '超级兵-超级炸弹人.png', 8, 'super_troops');
+INSERT INTO `troops` VALUES ('超级瓦力基女神', '超级兵-超级瓦力基女神.png', 20, 'super_troops');
+INSERT INTO `troops` VALUES ('超级矿工', '超级兵-超级矿工.png', 24, 'super_troops');
+INSERT INTO `troops` VALUES ('超级野猪骑士', '超级兵-超级野猪骑士.png', 12, 'super_troops');
+INSERT INTO `troops` VALUES ('超级野蛮人', '超级兵-超级野蛮人.png', 5, 'super_troops');
+INSERT INTO `troops` VALUES ('超级飞龙', '超级兵-超级飞龙.png', 40, 'super_troops');
+INSERT INTO `troops` VALUES ('部队发射器', '攻城机器-部队发射器.png', 1, 'machines');
+INSERT INTO `troops` VALUES ('野猪骑士', '普通兵-野猪骑士.png', 5, 'troops');
+INSERT INTO `troops` VALUES ('野蛮人', '普通兵-野蛮人.png', 1, 'troops');
+INSERT INTO `troops` VALUES ('铁皮法术', '法术-铁皮法术.png', 1, 'magics');
+INSERT INTO `troops` VALUES ('镜像法术', '法术-镜像法术.png', 3, 'magics');
+INSERT INTO `troops` VALUES ('隐形法术', '法术-隐形法术.png', 1, 'magics');
+INSERT INTO `troops` VALUES ('隐秘哥布林', '超级兵-隐秘哥布林.png', 3, 'super_troops');
+INSERT INTO `troops` VALUES ('雷电法术', '法术-雷电法术.png', 1, 'magics');
+INSERT INTO `troops` VALUES ('雷电飞龙', '普通兵-雷电飞龙.png', 30, 'troops');
+INSERT INTO `troops` VALUES ('雷霆泰坦', '普通兵-雷霆泰坦.png', 32, 'troops');
+INSERT INTO `troops` VALUES ('飞龙', '普通兵-飞龙.png', 20, 'troops');
+INSERT INTO `troops` VALUES ('飞龙宝宝', '普通兵-飞龙宝宝.png', 10, 'troops');
+INSERT INTO `troops` VALUES ('龙骑士', '普通兵-龙骑士.png', 25, 'troops');
