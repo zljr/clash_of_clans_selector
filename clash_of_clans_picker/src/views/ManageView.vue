@@ -114,7 +114,8 @@ function handleMinus(container: number, category: string, name: string) {
     case 'magics':
       if (selectMagicsSpace.value - container < 0) {
         ElMessage.error(`删除失败，低于最小${selectOptions[0].label}空间`)
-      }else if (singleTroopsStore.getSingleTroopCount(name) === 0) {
+      }
+      else if (singleTroopsStore.getSingleTroopCount(name) === 0) {
         ElMessage.error('删除失败，该兵种已选择的数量为0')
       }
       else {
@@ -127,7 +128,8 @@ function handleMinus(container: number, category: string, name: string) {
     case 'machines':
       if (selectMachinesSpace.value - container < 0) {
         ElMessage.error(`删除失败，低于最小${selectOptions[1].label}空间`)
-      }else if (singleTroopsStore.getSingleTroopCount(name) === 0) {
+      }
+      else if (singleTroopsStore.getSingleTroopCount(name) === 0) {
         ElMessage.error('删除失败，该兵种已选择的数量为0')
       }
       else {
@@ -140,7 +142,8 @@ function handleMinus(container: number, category: string, name: string) {
     case 'troops':
       if (selectTroopsSpace.value - container < 0) {
         ElMessage.error('删除失败，低于最小兵种空间')
-      }else if (singleTroopsStore.getSingleTroopCount(name) === 0) {
+      }
+      else if (singleTroopsStore.getSingleTroopCount(name) === 0) {
         ElMessage.error('删除失败，该兵种已选择的数量为0')
       }
       else {
@@ -153,7 +156,8 @@ function handleMinus(container: number, category: string, name: string) {
     case 'super_troops':
       if (selectTroopsSpace.value - container < 0) {
         ElMessage.error('删除失败，低于最小兵种空间')
-      }else if (singleTroopsStore.getSingleTroopCount(name) === 0) {
+      }
+      else if (singleTroopsStore.getSingleTroopCount(name) === 0) {
         ElMessage.error('删除失败，该兵种已选择的数量为0')
       }
       else {
@@ -269,12 +273,13 @@ function divideIntoCategories(troops: Troops[]) {
                           空间：{{ item.container }}
                         </template>
                         <el-badge :value="singleTroopsStore.getSingleTroopCount(item.name)" class="item" color="green">
+                          <div v-show="selectMagicsSpace + item.container > MAX_MAGICS_SPACE" class="overlay" />
                           <img :src="BASE_MAGICS_URL + item.path" style="width: 80px; height: 80px; cursor: pointer;" alt="">
                         </el-badge>
                       </el-tooltip>
                     </el-header>
                     <el-main style="display: flex;justify-content: center;align-items: center;">
-                      <el-button type="primary" plain @click="handleAdd(item.container, item.category, item.name)">
+                      <el-button type="primary" plain @click="handleAdd(item.container, item.category, item.name) ">
                         <el-icon><Plus /></el-icon>
                       </el-button>
                       {{ singleTroopsStore.getSingleTroopCount(item.name) }}
@@ -299,6 +304,7 @@ function divideIntoCategories(troops: Troops[]) {
                           空间：{{ item.container }}
                         </template>
                         <el-badge :value="singleTroopsStore.getSingleTroopCount(item.name)" class="item" color="green">
+                          <div v-show="selectMachinesSpace + item.container > MAX_MACHINES_SPACE" class="overlay" />
                           <img :src="BASE_MACHINES_URL + item.path" style="width: 80px; height: 80px; cursor: pointer;" alt="">
                         </el-badge>
                       </el-tooltip>
@@ -329,6 +335,7 @@ function divideIntoCategories(troops: Troops[]) {
                           空间：{{ item.container }}
                         </template>
                         <el-badge :value="singleTroopsStore.getSingleTroopCount(item.name)" class="item" color="green">
+                          <div v-show="selectTroopsSpace + item.container > MAX_TROOPS_SPACE" class="overlay" />
                           <img :src="BASE_TROOPS_URL + item.path" style="width: 80px; height: 80px; cursor: pointer;" alt="">
                         </el-badge>
                       </el-tooltip>
@@ -359,6 +366,7 @@ function divideIntoCategories(troops: Troops[]) {
                           空间：{{ item.container }}
                         </template>
                         <el-badge :value="singleTroopsStore.getSingleTroopCount(item.name)" class="item" color="green">
+                          <div v-show="selectTroopsSpace + item.container > MAX_TROOPS_SPACE" class="overlay" />
                           <img :src="BASE_SUPER_TROOPS_URL + item.path" style="width: 80px; height: 80px; cursor: pointer;" alt="">
                         </el-badge>
                       </el-tooltip>
@@ -381,6 +389,7 @@ function divideIntoCategories(troops: Troops[]) {
       </el-container>
     </el-container>
   </div>
+  <el-backtop :right="30" :bottom="100" />
 </template>
 
 <style scoped lang="less">
@@ -398,4 +407,13 @@ function divideIntoCategories(troops: Troops[]) {
       }
     }
   }
+  .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 10;
+}
 </style>
